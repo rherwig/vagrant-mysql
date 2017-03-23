@@ -1,0 +1,15 @@
+- hosts: all
+  become: yes
+  gather_facts: no
+
+  tasks:
+  - name: Create a new database with name 'blog'
+    mysql_db:
+      name: blog
+      state: present
+  - name: Create mysql user
+    mysql_user:
+      name: blog
+      password: blog
+      priv: '*.*:ALL'
+      state: present

@@ -1,0 +1,10 @@
+---
+- name: ensure mysql dependencies are present
+  apt: package={{ item }} state=present
+  with_items:
+    - python-pip
+    - python-dev
+    - libmysqlclient-dev
+    - mysql-server-5.6
+- name: ensure python packages are present
+  script: ../scripts/install.sh

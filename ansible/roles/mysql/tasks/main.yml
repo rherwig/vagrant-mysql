@@ -1,0 +1,6 @@
+---
+- hosts: all
+  tasks:
+    - include: dependencies.yml
+
+- include: database.yml
