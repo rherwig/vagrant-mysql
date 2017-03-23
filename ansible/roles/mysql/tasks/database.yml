@@ -3,13 +3,13 @@
   gather_facts: no
 
   tasks:
-  - name: Create a new database with name 'blog'
+  - name: Create a new database with name 'testdb'
     mysql_db:
-      name: blog
+      name: testdb
       state: present
   - name: Create mysql user
     mysql_user:
-      name: blog
-      password: blog
+      name: test
+      password: test
       priv: '*.*:ALL'
       state: present
